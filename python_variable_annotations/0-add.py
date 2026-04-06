@@ -4,6 +4,7 @@ Module 0-add
 Provides a type-annotated function to add two floats.
 """
 
+
 def add(a: float, b: float) -> float:
     """
     Add two floating point numbers.
