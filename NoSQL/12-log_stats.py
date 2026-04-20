@@ -5,11 +5,12 @@ Provides stats about Nginx logs stored in MongoDB
 
 from pymongo import MongoClient
 
-if __name__ == "__main__":
+def log_stats():
+    """Prints stats about Nginx logs"""
     client = MongoClient('mongodb://127.0.0.1:27017')
     collection = client.logs.nginx
 
-    # Total logs
+    # Total number of logs
     logs_count = collection.count_documents({})
     print(f"{logs_count} logs")
 
@@ -20,6 +21,12 @@ if __name__ == "__main__":
         count = collection.count_documents({"method": method})
         print(f"\tmethod {method}: {count}")
 
-    # Status check
-    status_check_count = collection.count_documents({"method": "GET", "path": "/status"})
+    # Status check count
+    status_check_count = collection.count_documents(
+        {"method": "GET", "path": "/status"}
+    )
     print(f"{status_check_count} status check")
+
+
+if __name__ == "__main__":
+    log_stats()
