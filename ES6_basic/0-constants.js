@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 // 0-constants.js
 
 export function taskFirst() {
@@ -13,6 +12,5 @@ export function getLast() {
 export function taskNext() {
   let combination = 'But sometimes let';
   combination += getLast();
-
   return combination;
 }
