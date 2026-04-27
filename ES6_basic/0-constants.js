@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 // 0-constants.js
 
 export function taskFirst() {
